@@ -35,6 +35,9 @@
   
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
 	  <Exec Command="xcopy /E /Y /d &quot;$(ProjectDir)ExtraLicenses\&quot; &quot;$(TargetDir)ExtraLicenses\&quot;" />
+	  
+	  <Exec Condition="'$(Configuration)' == 'Release'" Command="xcopy /E /Y /d /I &quot;d:\Projects\Crossbill.Common\config\licenses\*.txt&quot; &quot;$(ProjectDir)&quot;" />
+	  <Exec Condition="'$(Configuration)' == 'Release'" Command="c:\Crossbill.LicenseNoticeAggregator.lnk /project &quot;$(ProjectPath)&quot; /output &quot;$(ProjectDir)third-party-notices.txt&quot;" />
   </Target>
 
 </Project>
