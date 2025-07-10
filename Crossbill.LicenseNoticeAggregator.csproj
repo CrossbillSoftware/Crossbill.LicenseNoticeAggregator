@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	  <NoWarn>1701;1702;CS8981</NoWarn>
+	</PropertyGroup>
+  
+  <ItemGroup>
+	<PackageReference Include="HtmlAgilityPack" Version="1.11.57" />
+  </ItemGroup>
+  
+  <ItemGroup>
+	<None Include="ManualCheck\**">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<Compile Remove="ManualCheck\**" />
+	<Content Remove="ManualCheck\**" />
+	<EmbeddedResource Remove="ManualCheck\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+	<None Include="ExtraLicenses\**">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<Compile Remove="ExtraLicenses\**" />
+	<Content Remove="ExtraLicenses\**" />
+	<EmbeddedResource Remove="ExtraLicenses\**" />
+  </ItemGroup>
+  
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="xcopy /E /Y /d &quot;$(ProjectDir)ExtraLicenses\&quot; &quot;$(TargetDir)ExtraLicenses\&quot;" />
+  </Target>
+
+</Project>

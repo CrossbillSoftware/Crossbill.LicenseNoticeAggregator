@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Crossbill.Licenses": {
+      "commandName": "Project",
+      "commandLineArgs": "/project 'd:\\Projects\\Crossbill.Signalman\\Crossbill.Signalman.Plugins.Operations\\Crossbill.Signalman.Plugins.Operations.csproj' /exclude 'c:\\Crossbill.LicenseNoticeAggregator\\Crossbill.Signalman\\'\r\n\r\n\r\n"
+    }
+  }
+}

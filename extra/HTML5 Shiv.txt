@@ -1,0 +1,5 @@
+@afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+
+Copyright (c) 2014 Alexander Farkas (aFarkas).
+
+This software is licensed under a dual license system (MIT or GPL version 2). This means you are free to choose with which of both licenses (MIT or GPL version 2) you want to use this library.
